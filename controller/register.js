@@ -34,5 +34,8 @@ module.exports = {
         var keyObject = keythereum.dump(password, dk.privateKey, dk.salt, dk.iv, options);
 
         keythereum.exportToFile(keyObject,'/Users/pei/program/DApp/chain/keystore');
+        console.log(keyObject);
+        console.log(keyObject.address);
+        return keyObject.address;
     }
 };

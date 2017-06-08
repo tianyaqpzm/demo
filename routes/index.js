@@ -60,16 +60,16 @@ router.route("/register").get(function(req,res){    // 到达此路径则渲染r
             req.session.error = '用户名已存在！';
             res.send(500);
         }else{
+            let address = register.register(upwd);
             User.create({                             // 创建一组user对象置入model
                 name: uname,
-                password: upwd
+                password: upwd,
+                address:address
             },function(err,doc){
                 if (err) {
                     res.send(500);
                     console.log(err);
                 } else {
-                    //应该在此处 创建  账户地址：
-                    register.register(upwd);
                     req.session.error = '用户名创建成功！';
                     res.send(200);
                 }
