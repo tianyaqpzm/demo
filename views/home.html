@@ -1,17 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/fileinput/fileinput.css' />
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
     <style type="text/css">
         a{margin-left: 20px; text-decoration: none;}
         a:hover{text-decoration: underline;}
     </style>
 </head>
 <body>
+
+
 <h1>Your name:   <%- user.name %></h1>
 <p>Welcome to your home ~</p>
+
+
+
+<div class="col-md-4">
+
+    <label class="control-label" for="input-1"></label>
+    <input id = 'input-1' type="file" class="file"></br>
+
+<button type="submit" class="btn btn-primary btn-block" id="vote">新建投票</button>
+
+    <p id="transaction"></p><br>
+    <span id="status"></span>
+</div>
+
+<div class="col-md-8">
+    <div>
+        <label for="contractAddress">合约 地址</label>
+        <input type="text" id="contractAddress" placeholder="Contract Address">
+    </div>
+    <div>
+        <form class="form-horizontal">
+            <label for="address1">投票人地址</label>
+            <input type="text" id="address1" placeholder="Vote Address"><br>
+
+            <label class="checkbox-inline" id="address2">
+                <input type="checkbox" name ="address" id="inlineCheckbox1" value="0x3da1ed43a912c26254cd7883ebbf5b930d22bb42"> user1
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name ="address" id="inlineCheckbox2" value="0xfd9dd2937283c322b25b9de6005834c9c2ba8106"> user2
+            </label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name ="address" id="inlineCheckbox3" value="0x98a1352c0613f900a922074036b80f4470620f4f"> user3
+            </label>
+        </form>
+        <button type="submit" class="btn btn-primary" onclick="sendMess()" >通知投票人</button>
+    </div>
+</div>
+
+
+
+
+<div>
+    <button id="getCount" onclick="getCount()">getCount</button>
+    <button id="listContract" onclick="listContract()">listContract</button>
+    <ul id="ul">
+
+    </ul>
+</div>
 <p><a href="/logout">我要注销 </a>
+
+    <button id="getSum" onclick="getSum()">getSum</button>
 </p>
+<script type="text/javascript" src="javascripts/jquery.min.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="javascripts/bignumber.js/bignumber.min.js"></script>
+<script type="text/javascript" src="javascripts/dist/web3.js"></script>
+<script type="text/javascript" src="eth/vote.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript" src="javascripts/fileinput/fileinput.js"></script>
 </body>
 </html>

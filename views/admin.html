@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h3 class="text-center">Hello, Administrator<small> &nbsp;&nbsp;投票吧</small></h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-default" id="listVote">刷新待投票信息</button>
+            <div class="panel panel-default">
+                <div panel-heading>
+                    <h6 class="panel-title">待投票信息</h6>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group" id="voting">
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="javascripts/bignumber.js/bignumber.min.js"></script>
+<script type="text/javascript" src="javascripts/dist/web3.js"></script>
+<script src="eth/admin.js"></script>
+<script src="util.js"></script>
+</body>
+</html>

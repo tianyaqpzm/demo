@@ -65,7 +65,7 @@ app.use('/login',routes); // 即为为路径 /login 设置路由
 app.use('/register',routes); // 即为为路径 /register 设置路由
 app.use('/home',routes); // 即为为路径 /home 设置路由
 app.use("/logout",routes); // 即为为路径 /logout 设置路由
-
+app.use("/admin",routes); // 设置管理员的入口
 //测试 eth
 app.use('/index1',routes);
 

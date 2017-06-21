@@ -82,6 +82,25 @@ window.App = {
       console.log(e);
       self.setStatus("Error sending coin; see log.");
     });
+  },
+  whisper: function () {
+      // var shh = web3.shh;
+      // var appName = "My silly app!";
+      // var myName = "Gav Would";
+      // var myIdentity = shh.newIdentity();
+      //
+      // shh.post({
+      //     "from": myIdentity,
+      //     "topics": [ web3.fromAscii(appName) ],
+      //     "payload": [ web3.fromAscii(myName), web3.fromAscii("What is your name?") ],
+      //     "ttl": 100,
+      //     "priority": 1000
+      // });
+
+      console.log(web3.shh);
+      var idetity = web3.shh.newIdentity();
+
+
   }
 };
 
@@ -96,6 +115,7 @@ window.addEventListener('load', function() {
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
   }
-
+  App.whisper();
   App.start();
+
 });

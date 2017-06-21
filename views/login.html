@@ -66,9 +66,15 @@
                 url:'/login',
                 type:'post',
                 data: data,
+                dataType:"json",
                 success: function(data,status){
+//                    console.log(data);
                     if(status == 'success'){
-                        location.href = 'home';
+                        if(data.admin==true){
+                            location.href= 'admin';
+                        } else{
+                            location.href = 'home';
+                        }
                     }
                 },
                 error: function(data,status){
